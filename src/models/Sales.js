@@ -18,6 +18,6 @@ var saleSchema = new mongoose.Schema({
     metodoDePago: String    
 },{ timestamps: true });
 
-mongoose.model('Product', productSchema);
+mongoose.model('ventas', saleSchema);
 
-module.exports = productos = mongoose.model('Product', productSchema);
+module.exports = Sales = mongoose.model('ventas', saleSchema);

@@ -6,6 +6,6 @@ var payMethodSchema = new mongoose.Schema({
     codigo: Number,
 });
 
-mongoose.model('PayMethod', payMethodSchema);
+mongoose.model('metodosDePago', payMethodSchema);
 
-module.exports = metodosDePago = mongoose.model('PayMethod', payMethodSchema);
+module.exports = PayMethod = mongoose.model('metodosDePago', payMethodSchema);

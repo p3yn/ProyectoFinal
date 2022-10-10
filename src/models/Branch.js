@@ -19,6 +19,6 @@ var branchSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Branch', branchSchema);
+mongoose.model('sucursales', branchSchema);
 
-module.exports = sucursales = mongoose.model('Branch', branchSchema);
+module.exports = Branches = mongoose.model('sucursales', branchSchema);

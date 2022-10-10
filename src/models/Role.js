@@ -1,14 +1,14 @@
-const { object } = require('joi');
+//const { object } = require('joi');
 var mongoose = require('mongoose');
 
-var roleSchema = new mongoose.Schema({
-    nombreRol: { String, lowercase: true, index: true },
-    codigoRol: Number,
-    _id: mongoose.Types.ObjectId,
+const roleSchema = new mongoose.Schema({
+    nombreRol: { type: String, lowercase: true},
+    codigoRol: String,    
 }, {
-    timestamps: true
+    timestamps: true,
+    versionKey: false
 });
 
-mongoose.model('Role', roleSchema);
+mongoose.model('roles', roleSchema);
 
-module.exports = roles = mongoose.model('Role', roleSchema);
+module.exports = Roles = mongoose.model('roles', roleSchema);

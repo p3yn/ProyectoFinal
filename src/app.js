@@ -1,7 +1,7 @@
 const express =require('express')
 const morgan = require('morgan')
 const pkg = require('../package.json')
-const json = require('body-parser')
+//const json = require('body-parser')
  
 const app = express()
 app.set('pkg', pkg)
@@ -19,7 +19,9 @@ app.get('/', (req, res) => {
 })
 
 app.use('/products',require('./routes/products.routes'))
-app.use('/users',require('./routes/user.routes'))
+
+app.use('/auth', require('./routes/auth.routes'))
+
 
 
 module.exports = app;
