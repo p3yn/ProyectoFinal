@@ -7,10 +7,10 @@ var UserSchema = new mongoose.Schema({
     name: String,
     email: { type: String, unique: true, lowercase: true, index: true },
     password: { type: String, require: true },
-    roles: [{
-        ref: "Roles",
-        type: mongoose.Types.ObjectId
-    }]
+    roles: {
+        ref: 'Roles',
+        type: String
+    }
 }, {
     timestamps: true,
     versionKey: false

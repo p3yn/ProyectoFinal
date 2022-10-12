@@ -1,9 +1,10 @@
 const express =require('express')
 const morgan = require('morgan')
 const pkg = require('../package.json')
-//const json = require('body-parser')
+const createRoles = require('../src/libs/initCongif')
  
-const app = express()
+const app = express();
+createRoles();
 app.set('pkg', pkg)
 
 app.use(morgan('dev'))
