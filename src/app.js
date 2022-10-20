@@ -1,8 +1,8 @@
-const express =require('express')
+const express = require('express')
 const morgan = require('morgan')
 const pkg = require('../package.json')
 const createRoles = require('../src/libs/initCongif')
- 
+
 const app = express();
 createRoles();
 app.set('pkg', pkg)
@@ -19,9 +19,11 @@ app.get('/', (req, res) => {
     })
 })
 
-app.use('/products',require('./routes/products.routes'))
+app.use('/products', require('./routes/products.routes'));
 
-app.use('/auth', require('./routes/auth.routes'))
+app.use('/auth', require('./routes/auth.routes'));
+
+app.use('/users', require('./routes/user.routes'));
 
 
 

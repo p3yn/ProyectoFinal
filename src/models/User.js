@@ -1,20 +1,24 @@
 var mongoose = require('mongoose');
-const Roles = require('./Role');
+const Role = require('./Role');
 var bcrypt = require('bcrypt')
 
 
 var UserSchema = new mongoose.Schema({
     name: String,
-    email: { type: String, unique: true, lowercase: true, index: true },
+    email: { type: String, unique: true,
+        lowercase: true, index: true
+     },
     password: { type: String, require: true },
-    roles: {
-        ref: 'Roles',
-        type: String
-    }
+    roles: [{ 
+        ref: 'roles',
+        type: mongoose.Types.ObjectId
+    }],
 }, {
     timestamps: true,
     versionKey: false
 });
+
+
 
 UserSchema.statics.encryptPass = async (password) => {
     const salt = await bcrypt.genSalt(10);

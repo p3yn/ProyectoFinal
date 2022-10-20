@@ -1,6 +1,6 @@
 const productsCtrl = {}
 //const express = require('express');
-//const json = require('body-parser');
+const json = require('body-parser');
 const Product = require('../models/Product');
 
 

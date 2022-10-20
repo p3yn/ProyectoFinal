@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Proyecto final de CESUN 7mo, API Backend",
   "main": "index.js",
+  "type":"commonjs",
   "scripts": {
     "start": "nodemon src/index.js"
   },

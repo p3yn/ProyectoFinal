@@ -1,12 +1,17 @@
 const express = require('express')
 const router = express.Router()
 const productsCtrl = require ('../controllers/products.controller')
+const verifyOps = require('../middlewares/authJwt')
 
-router.get('/', productsCtrl.getProducts);
-router.post('/', productsCtrl.createProduct);
-router.get('/:productId', productsCtrl.getProductsById);
-router.put('/:productId', productsCtrl.updateProductsById);
-router.delete('/:productId', productsCtrl.deleteProductsById);
+//RUTAS PARA PRODUCTOS
+router.get('/', productsCtrl.getProducts); //cualquiera puede obtener, no necesita permisos especiales
+router.post('/add/', [verifyOps.verifyToken, verifyOps.isModerator], productsCtrl.createProduct); //ocupa token
+router.get('/search/:productId', productsCtrl.getProductsById);// cualquiera puede buscar  procutos por ID
+router.put('/update/:productId', [verifyOps.verifyToken, verifyOps.isAdmin], productsCtrl.updateProductsById); //ocupa token
+router.delete('/delete/:productId', [verifyOps.verifyToken, verifyOps.isAdmin], productsCtrl.deleteProductsById);//ocupa token
+
+//RUTAS PARA SUCURSALES
+
 
 
 

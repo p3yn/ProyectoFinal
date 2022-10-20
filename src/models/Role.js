@@ -1,4 +1,4 @@
-//const { object } = require('joi');
+
 var mongoose = require('mongoose');
 
 const roleSchema = new mongoose.Schema({
@@ -9,6 +9,10 @@ const roleSchema = new mongoose.Schema({
     versionKey: false
 });
 
+
+
 mongoose.model('roles', roleSchema);
 
-module.exports = roles = mongoose.model('roles', roleSchema);
+module.exports = roles = mongoose.model('roles', roleSchema)
+
+module.exports.ROLES = ['user','moderator','admin'];
