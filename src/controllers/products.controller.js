@@ -31,7 +31,7 @@ const updateProductsById = async (req, res) => {
 
 const deleteProductsById = async (req, res) => {
     const deletedProduct = await Product.findByIdAndDelete(req.params.productId)
-    res.status(204).json()
+    res.status(200).json()
 };
 
 

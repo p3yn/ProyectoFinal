@@ -10,9 +10,4 @@ router.get('/search/:productId', productsCtrl.getProductsById);// cualquiera pue
 router.put('/update/:productId', [verifyOps.verifyToken, verifyOps.isAdmin], productsCtrl.updateProductsById); //ocupa token
 router.delete('/delete/:productId', [verifyOps.verifyToken, verifyOps.isAdmin], productsCtrl.deleteProductsById);//ocupa token
 
-//RUTAS PARA SUCURSALES
-
-
-
-
 module.exports = router;

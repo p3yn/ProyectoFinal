@@ -7,7 +7,7 @@ const authCtrl = require('../controllers/auth.controller')
 
 //RUTAS PARA USUARIOS
 router.post('/',[verifyOps.verifyToken, verifyOps.isAdmin, roleExists], userCtrl.createUser); //authCtrl.signUp//cualquiera puede obtener, no necesita permisos especiales
-// router.put('/update/:userId', [verifyOps.verifyToken, verifyOps.isAdmin], userCtrl.updateUsersById); //ocupa token
-// router.delete('/delete/:userId', [verifyOps.verifyToken, verifyOps.isAdmin], productsCtrl.deleteUserseById);//ocupa token
+router.put('/update/:userId', [verifyOps.verifyToken, verifyOps.isAdmin], userCtrl.updateUserById); //ocupa token
+router.delete('/delete/:userId', [verifyOps.verifyToken, verifyOps.isAdmin], userCtrl.deleteUsersById);//ocupa token
 
 module.exports = router;
