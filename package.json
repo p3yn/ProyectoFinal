@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Proyecto final de CESUN 7mo, API Backend",
   "main": "index.js",
-  "type":"commonjs",
+  "type": "commonjs",
   "scripts": {
     "start": "nodemon src/index.js"
   },
@@ -21,6 +21,7 @@
     "moment-timezone": "^0.5.37",
     "mongoose": "^6.6.5",
     "morgan": "^1.10.0",
+    "node-geocoder": "^4.2.0",
     "tz-lookup": "^6.1.25"
   }
 }

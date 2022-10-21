@@ -1,5 +1,4 @@
 const productsCtrl = {}
-//const express = require('express');
 const json = require('body-parser');
 const Product = require('../models/Product');
 
@@ -33,7 +32,6 @@ const deleteProductsById = async (req, res) => {
     const deletedProduct = await Product.findByIdAndDelete(req.params.productId)
     res.status(200).json()
 };
-
 
 
 module.exports = {createProduct, getProducts, getProductsById,

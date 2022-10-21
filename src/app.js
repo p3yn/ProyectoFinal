@@ -25,6 +25,12 @@ app.use('/auth', require('./routes/auth.routes'));
 
 app.use('/users', require('./routes/user.routes'));
 
+app.use('/branch', require('./routes/branch.routes'));
+
+app.use('/sales', require('./routes/sales.routes'));
+
+app.use('/payment', require('./routes/payment.routes'));
+
 
 
 module.exports = app;

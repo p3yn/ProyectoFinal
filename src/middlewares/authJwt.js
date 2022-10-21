@@ -3,7 +3,7 @@ const config = require('dotenv')
 const User = require('../models/User')
 const { json } = require('body-parser')
 const Role = require('../models/Role')
-const { default: mongoose } = require('mongoose')
+//const { default: mongoose } = require('mongoose')
 
 const verifyToken = async (req, res, next) => {
     try {

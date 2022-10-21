@@ -9,7 +9,7 @@ var branchSchema = new mongoose.Schema({
     ubicacion: {
         type: {
             type: String,
-            enum: [Point],
+            enum: ['Point'],
             required: true
         },
         coordinates: {
